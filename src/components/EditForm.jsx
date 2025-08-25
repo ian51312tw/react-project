@@ -2,14 +2,14 @@ import { useState } from "react"
 
 
 // 方法1
-const CreateForm = ({ todos, setTodos }) => {
+const EditForm = ({ todo }) => {
 
 
-    const [content, setContent] = useState('');
+    const [editContent, setEditContent] = useState(todo.content);
 
 
     // 建立一個函式處理新增的todo資料
-    const addData = () => {
+    const editData = () => {
         // console.log(content.length)
         let myInput = document.getElementById('myInput');
         myInput.focus();    // 指定游標
@@ -18,8 +18,8 @@ const CreateForm = ({ todos, setTodos }) => {
         if (content.length === 0) {
             alert('沒有輸入待辦內容！請重新輸入');
         } else {
-            setTodos([...todos, { content: content, id: Math.random(), isCompleted: false }]);
-            setContent('');
+            setTodos({...todo, content: editContent, isEdit: false });
+            setEditContent('');
         }
     }
 
@@ -30,13 +30,13 @@ const CreateForm = ({ todos, setTodos }) => {
                 id="myInput"
                 type="text"
                 placeholder='輸入待辦事項'
-                value={content}
+                value={editContent}
                 onChange={(e) => {
                     // 去除資料前後的空白=> trim()
-                    setContent(e.target.value.trim())
+                    setEditContent(e.target.value.trim())
                 }}
             />
-            <button type="button" onClick={addData}>加入</button>
+            <button type="button" onClick={editData}>完成</button>
         </form>
     )
 }
@@ -68,5 +68,5 @@ const CreateForm = ({ todos, setTodos }) => {
 // }
 
 
-export default CreateForm
+export default EditForm
 
