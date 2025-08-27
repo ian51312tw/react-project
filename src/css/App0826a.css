@@ -1,0 +1,23 @@
+.zoom {
+    border: 2px solid red;
+    width: 300px;
+    display: inline-block;
+    margin: 100px;
+    overflow: hidden
+}
+
+/* css寫法 */
+/* .zoom:hover img {
+    transform: scale(1.2);
+} */
+
+.imgScale  img{
+    transform: scale(1.2);
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+    transition: all 1s;
+
+}
