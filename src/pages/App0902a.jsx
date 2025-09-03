@@ -39,7 +39,7 @@ const App = () => {
         <tbody>
           {ascFilterProds.map((prods) => {
             return (
-              <tr key={prods.id}>
+              <tr key={prods.id} >
                 <td style={{ borderBottom: '1px dashed #CCC', padding: '5px', width: '100px' }}>{prods.prodName}</td>
                 <td style={{ borderBottom: '1px dashed #CCC', padding: '5px', width: '300px' }}><img src={prods.prodImgUrl} alt="" style={{ width: '250px' }} /></td>
                 <td style={{ borderBottom: '1px dashed #CCC', padding: '5px', width: '100px' }}>{prods.prodPrice}</td>
